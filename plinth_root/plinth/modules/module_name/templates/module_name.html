@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load bootstrap %}
+
+{% block content %}
+
+<h2><module_shortname></h2>
+
+<p><module_description></p>
+
+<h3>Configuration</h3>
+
+<form class="form" method="post">
+  {% csrf_token %}
+
+  {{ form|bootstrap }}
+
+  <input type="submit" class="btn btn-primary" value="Update setup"/>
+</form>
+
+{% endblock %}
